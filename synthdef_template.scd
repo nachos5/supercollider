@@ -1,9 +1,7 @@
-s.boot;
-
 (SynthDef(
 	\test,
 	{
-		arg freq = 440;
+		|freq = 440|
 		Out.ar(0,
 			x = SinOsc.ar(freq=freq);
 			x!2;
@@ -13,3 +11,7 @@ s.boot;
 
 Synth(\test);
 Synth(\test, [\freq, 220]);
+
+x = Synth(\test);
+x.set(\freq, 220);
+x.free;
