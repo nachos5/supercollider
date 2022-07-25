@@ -1,35 +1,19 @@
-s.boot
-
-(
-o = Server.local.options;
-o.numOutputBusChannels.postln;
-o.memSize.postln;
-o.memSize = 2.pow(16);
-o.memSize.postln;
-)
-
-(
-s.quit;
-s.boot;
-)
+Server.killAll
+SCDoc.helpTargetDir
 
 // volume dót
 (
 v = s.volume;
-v.setVolumeRange(-90, 0);
+v.setVolumeRange(-90, -40);
+v.volume = -80;
 )
 
-// **** USEFUL DÓT **** //
-
-Platform.systemExtensionDir; // classar fara hingað
+// 'path' dót
+Platform.userConfigDir
+Platform.userExtensionDir;
+Platform.systemExtensionDir;
 c = MyClass();
 c.instanceMethod();
-
-// SHORTCUTS
-// ctrl+k, i => auto-indent
-// ctrl+alt+page up and down => volume
-// ctrl+d => leit
-// ctrl+u => references
 
 rand(100);
 exprand(1.0, 100.0); // lægri value líklegri
@@ -53,6 +37,9 @@ x.scope;
 
 v = "4";
 v.asInteger;
+
+"með" + "bili";
+"ekki með " ++ "bili";
 
 ~global = "pog";
 ~global.postln;
