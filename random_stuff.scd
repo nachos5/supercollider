@@ -8,6 +8,8 @@ v.setVolumeRange(-90, -40);
 v.volume = -80;
 )
 
+s.volume.volume;
+
 // 'path' dót
 Platform.userConfigDir
 Platform.userExtensionDir;
