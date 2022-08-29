@@ -29,7 +29,7 @@ SynthDef(\fx, { |out=0, amp=(-5)|
 (
 Routine {
   var frequencies, chords;
-  chords =  [
+  chords = [
     [0, 10, 15, 17, 19],
     [2, 3, 10, 34],
     [-2, 12, 17, 43]

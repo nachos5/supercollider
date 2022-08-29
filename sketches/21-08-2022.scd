@@ -1,7 +1,7 @@
 (
 
 (
-SynthDef(\pad, { |freq=440, gate=1, out=0, dbamp=(-20)|
+SynthDef(\pad, { |freq=440, gate=1, out=0|
   var sig, detunes;
   detunes = ((-3..3) * 0.05).midiratio;
   detunes.postln;
@@ -10,7 +10,7 @@ SynthDef(\pad, { |freq=440, gate=1, out=0, dbamp=(-20)|
   sig = Latch.ar(sig, Impulse.ar(4000));
   sig = Splay.ar(sig);
   sig = sig * Env.asr(3, 1, 3).ar(Done.freeSelf, gate);
-  sig = sig * dbamp.dbamp;
+  sig = sig * -16.dbamp;
   Out.ar(out, sig)
 }).add;
 );
@@ -24,7 +24,7 @@ SynthDef(\pad2, {
   sig = MoogFF.ar(sig, 8000, 0);
   sig = sig * Env.asr(3, 1, 3).ar(Done.freeSelf, \gate.kr(1));
   sig = Balance2.ar(sig[0], sig[1], \pan.kr(0));
-  sig = sig * -20.dbamp;
+  sig = sig * -16.dbamp;
   Out.ar(\out.kr(0), sig)
 }).add
 );
@@ -36,6 +36,7 @@ SynthDef(\kick, {
   sig = SinOsc.ar(60 * mod);
   sig = sig ! 2;
   sig = sig * Env.perc(0.001, 1.0).ar(Done.freeSelf);
+  sig = sig * -5.dbamp;
   Out.ar(\out.kr(0), sig)
 }).add
 );
@@ -54,6 +55,7 @@ SynthDef(\padFx, {
 SynthDef(\send, {
   var sig;
   sig = In.ar(\in.kr(0), 2);
+  sig = sig * -10.dbamp;
   Out.ar(\out.kr(0), sig)
 }).add
 );
@@ -70,7 +72,7 @@ Routine  {
   padBus = Bus.audio(s, 2);
   padGroup = Group();
 
-  bpm = 128;
+  bpm = 108;
   beat = 60 / bpm;
 
   padFx = Synth.tail(padGroup, \padFx, [out: padBus, gate: 0]);
