@@ -10,6 +10,10 @@ v.volume = -80;
 
 s.volume.volume;
 
+(
+s.queryAllNodes;
+)
+
 // 'path' dót
 Platform.userConfigDir
 Platform.userExtensionDir;
