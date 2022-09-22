@@ -1,5 +1,5 @@
 (
 
-Synth(\bass, [\freq, 80]);
+Synth(\bass, [\freq, 60]);
 
 )

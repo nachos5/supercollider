@@ -1,7 +1,7 @@
 (
 
-~bass_string = "
-E|6
+~sin_pattern_string = "
+e'|16
 -
 -
 -
@@ -11,17 +11,7 @@ E|6
 -
 -
 
-C|6
 -
--
--
-
--
--
--
--
-
-E|6
 -
 -
 -
@@ -31,7 +21,7 @@ E|6
 -
 -
 
-C|6
+h'|16
 -
 -
 -
@@ -41,7 +31,7 @@ C|6
 -
 -
 
-E|6
+a'|8
 -
 -
 -
@@ -51,16 +41,7 @@ E|6
 -
 -
 
-C|6
--
--
--
-
--
--
--
--
-E|6
+e'|16
 -
 -
 -
@@ -70,7 +51,27 @@ E|6
 -
 -
 
-C|6
+-
+-
+-
+-
+
+-
+-
+-
+-
+
+h'|16
+-
+-
+-
+
+-
+-
+-
+-
+
+e''|8
 -
 -
 -
@@ -81,6 +82,6 @@ C|6
 -
 ";
 
-~bass_note_arr = ~parse_note_string.(~bass_string);
+~sin_pattern_note_arr = ~parse_note_string.(~sin_pattern_string);
 
 )

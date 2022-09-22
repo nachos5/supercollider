@@ -14,6 +14,8 @@ s.volume.volume;
 s.queryAllNodes;
 )
 
+[s.avgCPU, s.peakCPU].postln;
+
 // 'path' dót
 Platform.userConfigDir
 Platform.userExtensionDir;
